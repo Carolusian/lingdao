@@ -3,4 +3,6 @@
 *.db
 .DS_Store
 .coverage
+local_settings.py
+fabfile.py
 /static
