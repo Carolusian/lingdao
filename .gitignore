@@ -5,6 +5,5 @@
 .coverage
 local_settings.py
 fabfile.py
-/static
 /fabfile.py
 /local_settings.py

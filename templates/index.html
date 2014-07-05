@@ -1,64 +1,7 @@
+{% extends "base.html" %}
+{% load staticfiles %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Home | Flat Theme</title>
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/static/css/font-awesome.min.css" rel="stylesheet">
-    <link href="/static/css/prettyPhoto.css" rel="stylesheet">
-    <link href="/static/css/animate.css" rel="stylesheet">
-    <link href="/static/css/main.css" rel="stylesheet">
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->       
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
-</head><!--/head-->
-<body>
-    <header class="navbar navbar-inverse navbar-fixed-top wet-asphalt" role="banner">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html"><img src="/static/images/logo.png" alt="logo"></a>
-            </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li><a href="about-us.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="icon-angle-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="career.html">Career</a></li>
-                            <li><a href="blog-item.html">Blog Single</a></li>
-                            <li><a href="pricing.html">Pricing</a></li>
-                            <li><a href="404.html">404</a></li>
-                            <li><a href="registration.html">Registration</a></li>
-                            <li class="divider"></li>
-                            <li><a href="privacy.html">Privacy Policy</a></li>
-                            <li><a href="terms.html">Terms of Use</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="blog.html">Blog</a></li> 
-                    <li><a href="contact-us.html">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </header><!--/header-->
+{% block main %}    
     <section id="main-slider" class="no-margin">
         <div class="carousel slide wet-asphalt">
             <ol class="carousel-indicators">
@@ -83,11 +26,9 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-sm-12">
-                                <div class="carousel-content center centered">
-                                    <h2 class="boxed animation animated-item-1">Clean, Crisp, Powerful and Responsie Web Design Theme</h2>
-                                    <p class="boxed animation animated-item-2">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-                                    <br>
-                                    <a class="btn btn-md animation animated-item-3" href="#">Learn More</a>
+                                <div class="carousel-content centered">
+                                    <h2 class="animation animated-item-1">Clean, Crisp, Powerful and Responsie Web Design Theme</h2>
+                                    <p class="animation animated-item-2">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
                                 </div>
                             </div>
                         </div>
@@ -100,14 +41,6 @@
                                 <div class="carousel-content centered">
                                     <h2 class="animation animated-item-1">Powerful and Responsive Web Design Theme</h2>
                                     <p class="animation animated-item-2">Pellentesque habitant morbi tristique senectus et netus et malesuada fames</p>
-                                    <a class="btn btn-md animation animated-item-3" href="#">Learn More</a>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 hidden-xs animation animated-item-4">
-                                <div class="centered">
-                                    <div class="embed-container">
-                                        <iframe src="//player.vimeo.com/video/69421653?title=0&amp;byline=0&amp;portrait=0&amp;color=a22c2f" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -126,10 +59,13 @@
     <section id="services" class="emerald">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-sm-6">
+                <div class="col-md-3 col-sm-6">
                     <div class="media">
                         <div class="pull-left">
-                            <i class="icon-twitter icon-md"></i>
+                            <!-- <i class="icon&#45;twitter icon&#45;md"></i> -->
+                            <a href="http://tieba.baidu.com/f?kw=%E9%9D%88%E9%81%93&ie=utf-8&ie=utf-8&fr=wwwt">
+                              <img src="{% static "images/services/tieba.jpg" %}" style="height:" />
+                            </a>
                         </div>
                         <div class="media-body">
                             <h3 class="media-heading">Twitter Marketing</h3>
@@ -137,28 +73,48 @@
                         </div>
                     </div>
                 </div><!--/.col-md-4-->
-                <div class="col-md-4 col-sm-6">
+                <div class="col-md-3 col-sm-6">
                     <div class="media">
                         <div class="pull-left">
-                            <i class="icon-facebook icon-md"></i>
+                            <!-- <i class="icon&#45;twitter icon&#45;md"></i> -->
+                            <a href="http://shop61036952.taobao.com/">
+                              <img src="{% static "images/services/taobao.jpg" %}" style="height:" />
+                            </a>
                         </div>
                         <div class="media-body">
-                            <h3 class="media-heading">Facebook Marketing</h3>
+                            <h3 class="media-heading">Twitter Marketing</h3>
                             <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
                         </div>
                     </div>
-                </div><!--/.col-md-4-->
-                <div class="col-md-4 col-sm-6">
+                </div><!--/.col-md-3-->
+                <div class="col-md-3 col-sm-6">
                     <div class="media">
                         <div class="pull-left">
-                            <i class="icon-google-plus icon-md"></i>
+                            <!-- <i class="icon&#45;twitter icon&#45;md"></i> -->
+                            <a href="http://www.weibo.com/nhs168?topnav=1&wvr=5&topsug=1">
+                              <img src="{% static "images/services/weibo.jpg" %}" style="height:" />
+                            </a>
                         </div>
                         <div class="media-body">
-                            <h3 class="media-heading">Google Plus Marketing</h3>
+                            <h3 class="media-heading">Twitter Marketing</h3>
                             <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
                         </div>
                     </div>
-                </div><!--/.col-md-4-->
+                </div><!--/.col-md-3-->
+                <div class="col-md-3 col-sm-6">
+                    <div class="media">
+                        <div class="pull-left">
+                            <!-- <i class="icon&#45;twitter icon&#45;md"></i> -->
+                            <a href="https://www.facebook.com/profile.php?id=100003021950248&fref=ts">
+                              <img src="{% static "images/services/facebook.jpg" %}" style="height:" />
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">Twitter Marketing</h3>
+                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
+                        </div>
+                    </div>
+                </div><!--/.col-md-3-->
             </div>
         </div>
     </section><!--/#services-->
@@ -307,109 +263,4 @@
         </div>
     </section><!--/#testimonial-->
 
-    <section id="bottom" class="wet-asphalt">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <h4>About Us</h4>
-                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
-                    <p>Pellentesque habitant morbi tristique senectus.</p>
-                </div><!--/.col-md-3-->
-
-                <div class="col-md-3 col-sm-6">
-                    <h4>Company</h4>
-                    <div>
-                        <ul class="arrow">
-                            <li><a href="#">The Company</a></li>
-                            <li><a href="#">Our Team</a></li>
-                            <li><a href="#">Our Partners</a></li>
-                            <li><a href="#">Our Services</a></li>
-                            <li><a href="#">Faq</a></li>
-                            <li><a href="#">Conatct Us</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms of Use</a></li>
-                            <li><a href="#">Copyright</a></li>
-                        </ul>
-                    </div>
-                </div><!--/.col-md-3-->
-
-                <div class="col-md-3 col-sm-6">
-                    <h4>Latest Blog</h4>
-                    <div>
-                        <div class="media">
-                            <div class="pull-left">
-                                <img src="images/blog/thumb1.jpg" alt="">
-                            </div>
-                            <div class="media-body">
-                                <span class="media-heading"><a href="#">Pellentesque habitant morbi tristique senectus</a></span>
-                                <small class="muted">Posted 17 Aug 2013</small>
-                            </div>
-                        </div>
-                        <div class="media">
-                            <div class="pull-left">
-                                <img src="images/blog/thumb2.jpg" alt="">
-                            </div>
-                            <div class="media-body">
-                                <span class="media-heading"><a href="#">Pellentesque habitant morbi tristique senectus</a></span>
-                                <small class="muted">Posted 13 Sep 2013</small>
-                            </div>
-                        </div>
-                        <div class="media">
-                            <div class="pull-left">
-                                <img src="images/blog/thumb3.jpg" alt="">
-                            </div>
-                            <div class="media-body">
-                                <span class="media-heading"><a href="#">Pellentesque habitant morbi tristique senectus</a></span>
-                                <small class="muted">Posted 11 Jul 2013</small>
-                            </div>
-                        </div>
-                    </div>  
-                </div><!--/.col-md-3-->
-
-                <div class="col-md-3 col-sm-6">
-                    <h4>Address</h4>
-                    <address>
-                        <strong>Twitter, Inc.</strong><br>
-                        795 Folsom Ave, Suite 600<br>
-                        San Francisco, CA 94107<br>
-                        <abbr title="Phone">P:</abbr> (123) 456-7890
-                    </address>
-                    <h4>Newsletter</h4>
-                    <form role="form">
-                        <div class="input-group">
-                            <input type="text" class="form-control" autocomplete="off" placeholder="Enter your email">
-                            <span class="input-group-btn">
-                                <button class="btn btn-danger" type="button">Go!</button>
-                            </span>
-                        </div>
-                    </form>
-                </div> <!--/.col-md-3-->
-            </div>
-        </div>
-    </section><!--/#bottom-->
-
-    <footer id="footer" class="midnight-blue">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    &copy; 2013 <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">ShapeBootstrap</a>. All Rights Reserved.
-                </div>
-                <div class="col-sm-6">
-                    <ul class="pull-right">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Faq</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a id="gototop" class="gototop" href="#"><i class="icon-chevron-up"></i></a></li><!--#gototop-->
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer><!--/#footer-->
-
-    <script src="/static/js/jquery.js"></script>
-    <script src="/static/js/bootstrap.min.js"></script>
-    <script src="/static/js/jquery.prettyPhoto.js"></script>
-    <script src="/static/js/main.js"></script>
-</body>
-</html>
+ {% endblock %}
