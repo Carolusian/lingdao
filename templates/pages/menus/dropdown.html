@@ -3,11 +3,11 @@
 {% if page_branch_in_menu %}
 
 {% if branch_level == 0 %}
-<ul class="nav navbar-nav navbar-right">
+<ul class="nav navbar-nav">
     {% for page in page_branch %}
     {% if not has_home and page.is_primary and forloop.first %}
     <li{% if on_home %} class="active"{% endif %} id="dropdown-menu-home">
-        <a href="{% url "home" %}">{% trans "Home" %}</a>
+        <a href="{% url "home" %}"><i class="icon-home"></i></a>
     </li>
     {% endif %}
     {% if page.in_menu %}

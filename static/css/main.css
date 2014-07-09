@@ -324,6 +324,7 @@ body > section {
 }
 #main-slider {
   position: relative;
+  margin-top:20px;
 }
 #main-slider .carousel h2 {
   font-size: 36px;
@@ -711,6 +712,13 @@ ul.tag-cloud li {
 .btn-social:hover {
   color: #fff;
 }
+.navbar .container { min-height: 104px; }
+.navbar-header {
+  width:100%;
+}
+.navbar-header .navbar-toggle{
+  margin-right:0px;
+}
 .navbar-inverse {
   border: none;
   background-color:#92302D;
@@ -720,13 +728,16 @@ ul.tag-cloud li {
   font-size: 36px;
   line-height: 50px;
   color: #fff;
-  padding: 8px 8px;
+  padding: 0px; 
+  padding-bottom: 8px; 
+}
+.navbar-inverse .navbar-brand > img {
+  margin-left:20px;
 }
 .navbar-inverse .navbar-nav {
-  margin-top: 20px;
 }
 .navbar-inverse .navbar-nav > li > a {
-  padding-top: 7px;
+  padding-top: 3px;
   padding-bottom: 7px;
   border-radius: 4px;
   color: #fff;
@@ -743,7 +754,7 @@ ul.tag-cloud li {
   text-decoration: underline;
 }
 .navbar-inverse .navbar-nav .dropdown-menu {
-  background-color: #92302D;
+  background-color: #B40022;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
@@ -753,7 +764,7 @@ ul.tag-cloud li {
 }
 .navbar-inverse .navbar-nav .dropdown-menu > li > a {
   padding: 8px 15px;
-  color: #bdc3c7;
+  color: #fff;
 }
 .navbar-inverse .navbar-nav .dropdown-menu > li:hover > a,
 .navbar-inverse .navbar-nav .dropdown-menu > li:focus > a,
@@ -1096,4 +1107,7 @@ ul.faq li > div h3 {
 }
 .carousel-inner p {
   font-size:20px;
+}
+div.pp_default .pp_content_container .pp_details {
+  margin-left: 20px;
 }
