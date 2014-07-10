@@ -1117,6 +1117,22 @@ div.pp_default .pp_content_container .pp_details {
 .panel .nav-list a:hover {
   color: #333;
 }
-.tree > .nav .nav > li {
+.tree .active-branch > a {
+  font-weight: bold;
+}
+.tree .active > a {
+  background-color: #EEEEEE;
+  color:#333;
+}
+
+ul.navlist-menu-level-2 {
+  list-style-type: circle;
+}
+
+.navlist-menu-level-2 li {
   padding-left: 15px;
+}
+
+.navlist-menu-level-2 li a {
+  padding: 2px 15px;
 }
