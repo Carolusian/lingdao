@@ -250,6 +250,9 @@ INSTALLED_APPS = (
     "mezzanine.twitter",
     #"mezzanine.accounts",
     #"mezzanine.mobile",
+
+    # My APPs
+    "common",
 )
 
 # List of processors used by RequestContext to populate the context.

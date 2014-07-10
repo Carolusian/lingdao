@@ -1111,3 +1111,12 @@ ul.faq li > div h3 {
 div.pp_default .pp_content_container .pp_details {
   margin-left: 20px;
 }
+.panel .nav-list a {
+  color: #fff;
+}
+.panel .nav-list a:hover {
+  color: #333;
+}
+.tree > .nav .nav > li {
+  padding-left: 15px;
+}
