@@ -253,6 +253,7 @@ INSTALLED_APPS = (
 
     # My APPs
     "common",
+    "articles"
 )
 
 # List of processors used by RequestContext to populate the context.

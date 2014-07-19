@@ -10,6 +10,9 @@ from mezzanine.pages.models import Page
 from mezzanine.utils.urls import home_slug
 from mezzanine import template
 
+from os import path
+import settings
+
 
 register = template.Library()
 
@@ -127,4 +130,46 @@ def page_menu_level_2(context, token):
     context["children_level_2"] = context["menu_pages"].get(parent_page_id, [])
 
     t = get_template(template_name)
+    return t.render(Context(context))
+
+
+@register.render_tag
+def folding_fan(context, token):
+    parts = token.split_contents()[1:]
+    fan_name = None
+    for part in parts:
+        part = Variable(part).resolve(context)
+        if isinstance(part, str):
+            fan_name = part
+
+    exist = False
+    if fan_name:
+        p = path.join(settings.MEDIA_ROOT,
+                      'uploads', 'fans', '{0}.png'.format(fan_name))
+        exist = path.exists(p)
+
+    context['exist'] = exist
+    context['image_url'] = 'media/uploads/fans/{0}.png'.format(fan_name)
+    t = get_template("common/menus/fans.html")
+    return t.render(Context(context))
+
+
+@register.render_tag
+def page_heading(context, token):
+    parts = token.split_contents()[1:]
+    heading_name = None
+    for part in parts:
+        part = Variable(part).resolve(context)
+        if isinstance(part, str):
+            heading_name = part
+
+    exist = False
+    if heading_name:
+        p = path.join(settings.MEDIA_ROOT, 'uploads', 'headings',
+                      '{0}.png'.format(heading_name))
+        exist = path.exists(p)
+
+    context['exist'] = exist
+    context['image_url'] = 'media/uploads/headings/{0}.png'.format(heading_name)
+    t = get_template("common/menus/headings.html")
     return t.render(Context(context))
