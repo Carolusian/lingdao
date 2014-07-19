@@ -16,4 +16,7 @@ urlpatterns = patterns(
     url("^category/(?P<category>.*)%s$" % _slashes[1],
         'article_list_category',
         name='article-list-category'),
+    url("^(?P<slug>.*)%s$" % _slashes[1],
+        'article_detail',
+        name='article-detail'),
 )

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load i18n future mezzanine_tags blog_tags common_tags %}
+
+{% block meta_title %}{% if category %}{{ category.title }}{% endif %}{% endblock %}
+
+{% block main %}
+{% if page %}
+  {% block blog_post_list_pagecontent %}
+  {% if page.get_content_model.content %}
+    {% editable page.get_content_model.content %}
+    {{ page.get_content_model.content | richtext_filters | safe }}
+    {% endeditable %}
+  {% endif %}
+  {% endblock %}
+{% endif %}
+
+{% if category %}
+    {% page_heading category.title %}
+    {% for article in articles %}
+        <h4>{{article.title}}</h4>
+        <em>發布時間: {{article.created}}</em>
+            <article><p>
+                {{article.description_from_content|safe }}
+            </p></article>
+            <a class="btn btn-blog pull-right marginBottom10" href="{{article.get_absolute_url}}">查看更多</a> 
+    {% endfor %}
+    <br />
+    {% pagination_for articles %}
+{% endif %}
+{% endblock %}

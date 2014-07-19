@@ -1,7 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700,300);
-img {
-  width:100%;
-}
+
 .clearfix {
   *zoom: 1;
 }
@@ -1193,3 +1191,24 @@ ul.navlist-menu-level-2 {
     -moz-border-radius: 6px 0 6px 6px;
     border-radius: 6px 0 6px 6px;
 }
+.blogShort{ border-bottom:1px solid #ddd;}
+.add{background: #333; padding: 10%; height: 300px;}
+
+.btn-blog {
+    color: #ffffff;
+    background-color: #92302D;
+    border-color: #92302D;
+    border-radius:0;
+    margin-bottom:10px
+}
+.btn-blog:hover,
+.btn-blog:focus,
+.btn-blog:active,
+.btn-blog.active,
+.open .dropdown-toggle.btn-blog {
+    color: white;
+    background-color:#34ca78;
+    border-color: #34ca78;
+}
+ h2{color:#34ca78;}
+ .margin10{margin-bottom:10px; margin-right:10px;}
