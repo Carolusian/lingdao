@@ -85,6 +85,9 @@ ADMIN_MENU_ORDER = (
 # INSTALLED_APPS setting.
 USE_SOUTH = True
 
+SOUTH_MIGRATION_MODULES = {
+    'photologue': 'photologue.south_migrations',
+}
 
 ########################
 # MAIN DJANGO SETTINGS #
@@ -256,6 +259,10 @@ INSTALLED_APPS = (
     "mezzanine.twitter",
     #"mezzanine.accounts",
     #"mezzanine.mobile",
+
+    # Third party APPs
+    "photologue",
+    "sortedm2m",
 
     # My APPs
     "common",

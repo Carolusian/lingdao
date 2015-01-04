@@ -60,6 +60,7 @@ urlpatterns += patterns('',
 
     # LINGDAO APPs URLS
     url("^articles/", include("articles.urls")),
+    url(r'^photologue/', include("photologue.urls", namespace="photologue")),
 
 
     # MEZZANINE'S URLS
