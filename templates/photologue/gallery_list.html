@@ -1,0 +1,25 @@
+{% extends "photologue/root.html" %}
+{% load i18n %}
+
+{% block meta_title %}{% trans "All galleries" %}{% endblock %}
+
+{% block content %}
+<div class="row">
+    <ul class="list-unstyled">
+        {% if object_list %}
+        {% for gallery in object_list %}
+        <li class="col-xs-12 col-sm-6">
+        <h2><a href="{{ gallery.get_absolute_url }}">{{ gallery.title }}</a></h2>
+        <a href="{{gallery.get_absolute_url}}">
+            {% for photo in gallery.sample %}
+            {% if forloop.first %}
+            <img src="{{photo.get_display_url}}" class="thumbnail" alt="photo.title">
+            {% endif %}
+            {% endfor %}
+        </a>
+        </li>
+        {% endfor %}
+        {% endif %}
+    </ul>
+</div>
+{% endblock %}

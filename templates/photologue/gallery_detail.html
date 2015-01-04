@@ -1,0 +1,20 @@
+{% extends "photologue/root.html" %}
+{% load i18n %}
+
+{% block meta_title %}{{ gallery.title }}{% endblock %}
+
+{% block main %}
+
+<div class="row">
+  <div class="col-sm-12">
+    <h1 class="page-header">{{ gallery.title }}</h1>
+    {% for photo in gallery.public %}
+    <a href="#" class="col-sm-12">
+      <img src="{{ photo.get_display_url }}" class="img-responsive img-thumbnail" alt="{{ photo.title }}">
+    </a>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}
+
