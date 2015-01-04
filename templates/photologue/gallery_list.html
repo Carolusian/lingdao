@@ -3,13 +3,16 @@
 
 {% block meta_title %}{% trans "All galleries" %}{% endblock %}
 
-{% block content %}
+{% block main %}
+<p><img src="/static/media/uploads/ling%20dao%20tu%20wen/灵道风采.jpg" height="71" width="300" /></p>
+<p></p>
+<div class="page-title-line">&nbsp;</div>
 <div class="row">
     <ul class="list-unstyled">
         {% if object_list %}
         {% for gallery in object_list %}
         <li class="col-xs-12 col-sm-6">
-        <h2><a href="{{ gallery.get_absolute_url }}">{{ gallery.title }}</a></h2>
+        <h3><a href="{{ gallery.get_absolute_url }}">{{ gallery.title }}</a></h3>
         <a href="{{gallery.get_absolute_url}}">
             {% for photo in gallery.sample %}
             {% if forloop.first %}
