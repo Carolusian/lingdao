@@ -139,8 +139,7 @@ def folding_fan(context, token):
     fan_name = None
     for part in parts:
         part = Variable(part).resolve(context)
-        if isinstance(part, str):
-            fan_name = part
+        fan_name = part.strip('/')
 
     exist = False
     if fan_name:

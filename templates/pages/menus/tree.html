@@ -5,7 +5,7 @@
 <ul class="nav nav-list navlist-menu-level-{{ branch_level }}">
   {% for page in page_branch %}
   {% if page.is_current_or_ascendant %}
-  {% folding_fan page.title %}
+  {% folding_fan page.get_absolute_url %}
   <li class="
     {% if page.is_current %} active{% endif %}
     {% if page.is_current_or_ascendant %} active-branch{% endif %}
