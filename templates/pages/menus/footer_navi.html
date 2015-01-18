@@ -1,0 +1,13 @@
+{% load pages_tags i18n future staticfiles %}
+
+{% if branch_level == 0 %}
+<ul class="arrow">
+  {% for page in page_branch %}
+  <li>
+  <a href="{{page.get_absolute_url}}">
+    {{page.title}}
+  </a>
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}

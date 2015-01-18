@@ -60,78 +60,41 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-sm-6">
-                    <h4>About Us</h4>
-                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
-                    <p>Pellentesque habitant morbi tristique senectus.</p>
+                    <h4>關於靈道</h4>
+                    <p>【靈道】是由創派祖師清靈凈修法師所立，經第二代傳承掌門嚴罡法師集各家所長發展而成的法科門類派別,至今已傳承至第三代。現任傳承掌門為擇罡師傅，靈學工作室【靈軒啥】現設于香港特別行政區。</p>
                 </div><!--/.col-md-3-->
 
                 <div class="col-md-3 col-sm-6">
-                    <h4>Company</h4>
+                    <h4>網站導覽</h4>
                     <div>
-                        <ul class="arrow">
-                            <li><a href="#">The Company</a></li>
-                            <li><a href="#">Our Team</a></li>
-                            <li><a href="#">Our Partners</a></li>
-                            <li><a href="#">Our Services</a></li>
-                            <li><a href="#">Faq</a></li>
-                            <li><a href="#">Conatct Us</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms of Use</a></li>
-                            <li><a href="#">Copyright</a></li>
-                        </ul>
+                        {% page_menu "pages/menus/footer_navi.html" %}
                     </div>
                 </div><!--/.col-md-3-->
 
                 <div class="col-md-3 col-sm-6">
-                    <h4>Latest Blog</h4>
+                    <h4>道場指引</h4>
                     <div>
                         <div class="media">
-                            <div class="pull-left">
-                                <img src="images/blog/thumb1.jpg" alt="">
-                            </div>
                             <div class="media-body">
-                                <span class="media-heading"><a href="#">Pellentesque habitant morbi tristique senectus</a></span>
-                                <small class="muted">Posted 17 Aug 2013</small>
-                            </div>
-                        </div>
-                        <div class="media">
-                            <div class="pull-left">
-                                <img src="images/blog/thumb2.jpg" alt="">
-                            </div>
-                            <div class="media-body">
-                                <span class="media-heading"><a href="#">Pellentesque habitant morbi tristique senectus</a></span>
-                                <small class="muted">Posted 13 Sep 2013</small>
-                            </div>
-                        </div>
-                        <div class="media">
-                            <div class="pull-left">
-                                <img src="images/blog/thumb3.jpg" alt="">
-                            </div>
-                            <div class="media-body">
-                                <span class="media-heading"><a href="#">Pellentesque habitant morbi tristique senectus</a></span>
-                                <small class="muted">Posted 11 Jul 2013</small>
+                                <span class="media-heading"><a href="/about/%E9%9D%88%E9%81%93%E9%81%93%E5%A0%B4/%E9%9D%88%E8%BB%92%E5%95%A5/">靈軒啥</a></span>
                             </div>
                         </div>
                     </div>  
                 </div><!--/.col-md-3-->
 
                 <div class="col-md-3 col-sm-6">
-                    <h4>Address</h4>
+                    <h4>聯繫我們</h4>
                     <address>
-                        <strong>Twitter, Inc.</strong><br>
-                        795 Folsom Ave, Suite 600<br>
-                        San Francisco, CA 94107<br>
-                        <abbr title="Phone">P:</abbr> (123) 456-7890
+                        <strong>地址：<strong><br>
+                        香港九龍大角咀角祥街75號中耀樓4字樓26室
+                        （近中匯街）<br><br>
+                        <abbr title="Phone">電話:</abbr> (852) 6600 3364 <br>
+                        <abbr title="email">電郵:</abbr> nhs168@ymail.com <br>
+                        <abbr title="qq">QQ:</abbr> 2602944835
+                        <br><br>
+                        <strong>時間：<strong><br>
+                        周一至周六下午1：00至晚上7：00（時間可彈性選擇）
                     </address>
-                    <h4>Newsletter</h4>
-                    <form role="form">
-                        <div class="input-group">
-                            <input type="text" class="form-control" autocomplete="off" placeholder="Enter your email">
-                            <span class="input-group-btn">
-                                <button class="btn btn-danger" type="button">Go!</button>
-                            </span>
-                        </div>
-                    </form>
                 </div> <!--/.col-md-3-->
             </div>
         </div>
@@ -141,14 +104,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    &copy; 2013 <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">ShapeBootstrap</a>. All Rights Reserved.
+                    &copy; {% now "Y" %} <a target="_blank" href="http://lingdao.hk/" title="靈道">靈道 lingdao.hk</a>. All Rights Reserved.
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Faq</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">返回歡迎頁面</a></li>
+                        <li><a href="/">網站首頁</a></li>
+                        <li><a href="/contact/">聯繫我們</a></li>
                         <li><a id="gototop" class="gototop" href="#"><i class="icon-chevron-up"></i></a></li><!--#gototop-->
                     </ul>
                 </div>
