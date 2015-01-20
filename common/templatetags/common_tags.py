@@ -141,6 +141,9 @@ def folding_fan(context, token):
         part = Variable(part).resolve(context)
         fan_name = part.strip('/')
 
+    if fan_name.startswith('blog/category/'):
+        fan_name="whatsnew"
+
     exist = False
     if fan_name:
         p = path.join(settings.MEDIA_ROOT,
