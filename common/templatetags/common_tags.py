@@ -142,7 +142,9 @@ def folding_fan(context, token):
         fan_name = part.strip('/')
 
     if fan_name.startswith('blog/category/'):
-        fan_name="whatsnew"
+        fan_name = "whatsnew"
+    else:
+        fan_name = "whatsnew"
 
     exist = False
     if fan_name:

@@ -42,6 +42,11 @@
 {% endblock %}
 
 {% block main %}
+{% if page %}
+{% if page.get_content_model.content %}
+{{ page.get_content_model.content|richtext_filters|safe }}
+{% endif %}
+{% endif %}
 
 <div class="blog-list">
 {% for blog_post in blog_posts.object_list %}
