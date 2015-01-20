@@ -1212,3 +1212,20 @@ ul.navlist-menu-level-2 {
 }
  h2{color:#34ca78;}
  .margin10{margin-bottom:10px; margin-right:10px;}
+
+
+.blog-list a {
+  color: #ca1717; text-decoration: none; 
+}
+
+.blog-list h2 {
+  font-size: 16pt;
+}
+
+.blog-list p.postmeta {
+  margin: 0 0 5px 0;
+  padding: 5px;
+  background: #ccc;
+  font-size: 12px;
+  line-height: 100%;
+}

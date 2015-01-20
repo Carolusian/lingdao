@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load i18n future mezzanine_tags blog_tags keyword_tags disqus_tags %}
+
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Blog" %}{% endif %}{% endblock %}
+
+{% block meta_keywords %}{% metablock %}
+{% keywords_for page as keywords %}
+{% for keyword in keywords %}
+    {% if not forloop.first %}, {% endif %}
+    {{ keyword }}
+{% endfor %}
+{% endmetablock %}{% endblock %}
+
+{% block meta_description %}{% metablock %}
+{{ page.description }}
+{% endmetablock %}{% endblock %}
+
+{% block title %}
+{% if page %}
+{% editable page.title %}{{ page.title }}{% endeditable %}
+{% else %}
+{% trans "Blog" %}
+{% endif %}
+{% endblock %}
+
+{% block breadcrumb_menu %}
+{{ block.super }}
+{% if tag or category or year or month or author %}
+<li>{% spaceless %}
+{% if tag %}
+    {% trans "Tag:" %} {{ tag }}
+{% else %}{% if category %}
+    {% trans "Category:" %} {{ category }}
+{% else %}{% if year or month %}
+    {% if month %}{{ month }}, {% endif %}{{ year }}
+{% else %}{% if author %}
+    {% trans "Author:" %} {{ author.get_full_name|default:author.username }}
+{% endif %}{% endif %}{% endif %}{% endif %}
+{% endspaceless %}
+</li>
+{% endif %}
+{% endblock %}
+
+{% block main %}
+
+<div class="blog-list">
+{% for blog_post in blog_posts.object_list %}
+    <h2><a href="{{ blog_post.get_absolute_url }}" rel="bookmark" title="{{ blog_post.title }}">
+        {{ blog_post.title }}
+    </a></h2>
+    <p class="postmeta">
+        <a href="{% url 'blog_post_list_category' category %}" rel="category tag">{{ category }}</a> • {{blog_post.publish_date | date:"Y-m-d H:i " }} <!-- 评论: {{ blog_post.comments_count }} 条--></a>          </p>
+    <div class="entry"> 
+        <p>{{ blog_post.content | safe | truncatechars:140 }}</p>
+    </div>
+{% endfor %}
+</div>
+{% pagination_for blog_posts %}
+
+{% if settings.COMMENTS_DISQUS_SHORTNAME %}
+{% include "generic/includes/disqus_counts.html" %}
+{% endif %}
+
+{% endblock %}
+
+{% block right_panel %}
+{% include "blog/includes/filter_panel.html" %}
+{% endblock %}
