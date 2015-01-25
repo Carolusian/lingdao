@@ -50,11 +50,11 @@
 
 <div class="blog-list">
 {% for blog_post in blog_posts.object_list %}
-    <h2><a href="{{ blog_post.get_absolute_url }}" rel="bookmark" title="{{ blog_post.title }}">
+    <h2><a href="{{ blog_post.get_absolute_url }}" target="_blank" rel="bookmark" title="{{ blog_post.title }}">
         {{ blog_post.title }}
     </a></h2>
     <p class="postmeta">
-        <a href="{% url 'blog_post_list_category' category %}" rel="category tag">{{ category }}</a> • {{blog_post.publish_date | date:"Y-m-d H:i " }} <!-- 评论: {{ blog_post.comments_count }} 条--></a>          </p>
+        <a href="{% url 'blog_post_list_category' category %}" rel="category tag">{{ category }}</a> • {{blog_post.publish_date | date:"Y-m-d H:i " }}  作者: {{ blog_post.user.get_full_name|default:blog_post.user.username }} </a>          </p>
     <div class="entry"> 
         <p>{{ blog_post.content | safe | truncatechars:140 }}</p>
     </div>

@@ -7,6 +7,7 @@ from django.template import Context, TemplateSyntaxError, Variable
 from django.template.loader import get_template
 
 from mezzanine.pages.models import Page
+from mezzanine.blog.models import BlogPost, BlogCategory
 from mezzanine.utils.urls import home_slug
 from mezzanine import template
 
@@ -143,7 +144,7 @@ def folding_fan(context, token):
 
     if fan_name.startswith('blog/category/'):
         fan_name = "whatsnew"
-    else:
+    elif fan_name == 'blog':
         fan_name = "whatsnew"
 
     exist = False
@@ -176,4 +177,24 @@ def page_heading(context, token):
     context['exist'] = exist
     context['image_url'] = 'media/uploads/headings/{0}.png'.format(heading_name)
     t = get_template("common/menus/headings.html")
+    return t.render(Context(context))
+
+@register.render_tag
+def index_page_posts(context, token):
+    def category_post(category):
+        blog_posts = BlogPost.objects.filter(categories=category).order_by('-id')
+        if len(blog_posts) > 0:
+            return blog_posts[0]
+        else:
+            return None
+
+    categories = BlogCategory.objects.all()
+    posts = [category_post(category) for category in categories]
+    posts = [post for post in posts if post is not None]
+    
+    if len(posts) > 4:
+        posts = posts[:4]
+    every_two = zip(posts[0::2], posts[1::2])
+    context["posts"] = every_two
+    t = get_template("common/latest_posts.html")
     return t.render(Context(context))

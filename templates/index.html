@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% load staticfiles %}
+{% load staticfiles common_tags i18n future pages_tags %}
 
 {% block content %}    
     <section id="main-slider" class="no-margin">
@@ -153,7 +153,6 @@
             </div>
         </div>
     </section><!--/#services-->
-
     <section id="testimonial" class="">
         <div class="container">
             <div class="row">
@@ -163,7 +162,8 @@
                     </div>
                     <div class="gap"></div>
                     <div class="row">
-                        <div class="col-md-6">
+                        {% index_page_posts %}
+                        <!--div class="col-md-6">
                             <blockquote>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
                                 <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
@@ -182,7 +182,7 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
                                 <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
                             </blockquote>
-                        </div>
+                        </div-->
                     </div>
                 </div>
             </div>
