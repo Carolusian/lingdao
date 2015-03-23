@@ -1,9 +1,4 @@
-{% for column in posts %}
-	 <div class="col-md-6">
-	{% for post in column %}
-	<blockquote>
-		<p><a href="{{ post.get_absolute_url }}" target="_blank">{{post.title}}</a></p>
-	</blockquote>
-	{% endfor %}
-	</div>
+<p>{{category}}</p>
+{% for post in posts %}
+	<small><a href="{{post.get_absolute_url }}" title="{{post.title}}">{{post.title}}</a></small>
 {% endfor %}

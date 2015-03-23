@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from __future__ import unicode_literals
 from future.builtins import str
 
@@ -181,20 +183,18 @@ def page_heading(context, token):
 
 @register.render_tag
 def index_page_posts(context, token):
-    def category_post(category):
-        blog_posts = BlogPost.objects.filter(categories=category).order_by('-id')
-        if len(blog_posts) > 0:
-            return blog_posts[0]
-        else:
-            return None
+    category_name = token.split_contents()[1:2][0]
+    category_name = Variable(category_name).resolve(context)
 
-    categories = BlogCategory.objects.all()
-    posts = [category_post(category) for category in categories]
-    posts = [post for post in posts if post is not None]
+    try:
+        category = BlogCategory.objects.get(title__contains=category_name)
+        print(category)
+        blog_posts = BlogPost.objects.filter(categories=category.pk).order_by('-id')
+    except BlogCategory.DoesNotExist:
+        blog_posts = []
     
-    if len(posts) > 4:
-        posts = posts[:4]
-    every_two = zip(posts[0::2], posts[1::2])
-    context["posts"] = every_two
+    # Get only the first 10 posts
+    context["category"] = category_name
+    context["posts"] = blog_posts[0:10]
     t = get_template("common/latest_posts.html")
     return t.render(Context(context))
