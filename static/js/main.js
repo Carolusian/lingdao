@@ -19,6 +19,10 @@ jQuery(function($) {
 
 	//portfolio
 	$(window).load(function(){
+		var mainSliderTimer = setInterval(function(){
+			$(".icon-angle-right").trigger("click");
+		}, 4000);
+
 		$portfolio_selectors = $('.portfolio-filter >li>a');
 		if($portfolio_selectors!='undefined'){
 			$portfolio = $('.portfolio-items');
