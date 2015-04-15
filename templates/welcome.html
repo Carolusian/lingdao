@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load pages_tags mezzanine_tags staticfiles %}
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>{% block meta_title %}首頁{% endblock %} | 靈道 lingdao.hk</title>
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "css/font-awesome.min.css" %}" rel="stylesheet">
+    <link href="{% static "css/prettyPhoto.css" %}" rel="stylesheet">
+    <link href="{% static "css/animate.css" %}" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="{% static "js/html5shiv.js" %}"></script>
+    <script src="{% static "js/respond.min.js" %}"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="{% static "images/favicon.ico" %}">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static "images/ico/apple-touch-icon-144-precomposed.png" %}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static "images/ico/apple-touch-icon-114-precomposed.png" %}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static "images/ico/apple-touch-icon-72-precomposed.png" %}">
+    <link rel="apple-touch-icon-precomposed" href="{% static "images/ico/apple-touch-icon-57-precomposed.png" %}">
+    
+    <!-- <script src="{% static "js/jquery.js" %}"></script> -->
+    <!-- <script src="{% static "js/bootstrap.min.js" %}"></script> -->
+
+    {% compress js %}
+    <script src="{% static "mezzanine/js/"|add:settings.JQUERY_FILENAME %}"></script>
+    <script src="{% static "js/bootstrap.js" %}"></script>
+    <script src="{% static "js/bootstrap-extras.js" %}"></script>
+    <script src="{% static "js/jquery.prettyPhoto.js" %}"></script>
+    <script src="{% static "js/main.js" %}"></script>
+    {% block extra_js %}{% endblock %}
+    {% endcompress %}
+    <style type="text/css">
+    section {
+        display: block;
+    }
+    #carousel{
+        overflow: hidden;
+        position: absolute; top: 0px; right: 0px; bottom: 55px; left: 0px; z-index: 0;
+        width: 100%;
+        background: #111111;
+    }
+    #carousel_slides{
+        width: 100%; height: 100%; 
+        overflow: hidden;
+        background: #000000;
+        /*filter: alpha(opacity = 0);*/
+        /*opacity: 0;*/
+        -webkit-transition: opacity 1s; -moz-transition: opacity 1s; -o-transition: opacity 1s; transition: opacity 1s;
+    }
+    #carousel #carousel_slides li{
+        /*display: none;*/
+        position: absolute; top: 0px; left: 0px;
+        overflow: hidden;
+        width: 100%; 
+        height: 100%;
+        /*filter: alpha(opacity = 0);*/
+        /*opacity: 0;*/
+        -webkit-transform: translate3D(0,0,0); transform: translate3D(0,0,0); /* trigger hardware acceleration - makes a serious difference */  
+        -webkit-transition: opacity 1s; -moz-transition: opacity 1s; -o-transition: opacity 1s; transition: opacity 1s;
+    }
+    #carousel_slides img{
+        display: block;
+    }
+    #carousel_slides .wide img{
+        height: 100%; width: auto; max-width: 999999px;
+    }
+    #carousel_slides .tall img{
+        height: auto; width: 100%; 
+    }
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 100px;
+    }
+    .footer:after {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 100px;
+        background-color: #92302D;
+    }
+    </style>
+</head><!--/head-->
+<body>
+    <section role="main" id="carousel">
+        <ul id="carousel_slides" class="active">
+            <li id="carousel_slide_0" class="tall">
+                <img src="{% static 'images/welcome/WELCOME01.jpg' %}" width="1920" height="1278" alt="" style="margin-top: -674px; margin-left: 0px;">
+            </li>
+            <li id="carousel_slide_1">
+                <img src="{% static 'images/welcome/WELCOME02.jpg' %}" width="1920" height="1278" alt="" style="margin-top: -674px; margin-left: 0px;">
+            </li>
+            <li id="carousel_slide_2">
+                <img src="{% static 'images/welcome/WELCOME03.jpg' %}" width="1920" height="1278" alt="" style="margin-top: -674px; margin-left: 0px;">
+            </li>
+        </ul>
+    </section>
+    <footer class="footer" class="midnight-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; {% now "Y" %} <a target="_blank" href="http://lingdao.hk/" title="靈道">靈道 lingdao.hk</a>. All Rights Reserved.
+                </div>
+                <div class="col-sm-6">
+                    <ul class="pull-right">
+                        <li><a href="#">返回歡迎頁面</a></li>
+                        <li><a href="/">網站首頁</a></li>
+                        <li><a href="/contact/">聯繫我們</a></li>
+                        <li><a id="gototop" class="gototop" href="#"><i class="icon-chevron-up"></i></a></li><!--#gototop-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+</body>

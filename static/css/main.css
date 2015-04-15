@@ -806,6 +806,12 @@ ul.tag-cloud li {
 #social-media .icon-pinterest:hover {
   background-color: #ec1e26;
 }
+#testimonial p {
+  font-size: 25.5px;
+}
+#testimonial small {
+  font-size: 120%;
+}
 .icon-lg {
   font-size: 48px;
   height: 108px;
